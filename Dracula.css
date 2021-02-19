@@ -1,8 +1,9 @@
+
 #document {
     background-color: #282a36;
 }
 #document .document-title {
-    color: #ffffff;
+    color: #131212;
 
 }
 body {
@@ -59,7 +60,7 @@ body {
     animation: fadein-zoom .05s;
     overflow: hidden;
 	background-color: #282a36;
-	
+
     color:white;
 }
 .rich-text-editor__selected-text-menu .rich-text-editor__selected-text-menu__doc-options {
@@ -67,7 +68,7 @@ body {
     padding: 0 4px;
     align-items: center;
 	background-color: #282a36;
-	
+
     color:white;
 }
 .rich-text-editor__selected-text-menu .rich-text-editor__selected-text-menu__search {
@@ -75,7 +76,7 @@ body {
     border-top: solid #c8c8c8;
     border-width: thin;
 	background-color: #282a36;
-	
+
     color:white;
 }
 .search-results #search-results__list {
@@ -84,13 +85,13 @@ body {
     overflow-y: auto;
     max-height: calc(100vh - 80px);
 	background-color: #282a36;
-	
+
     color:white;
 }
 .rich-text-editor__selected-text-menu .search-results #search-results__list {
 
 	background-color: #282a36;
-	
+
     color:white;
 }
 .selectedResult {
@@ -370,7 +371,7 @@ i.icon.refresh:before {
     padding-top: 1px;
 }
 /* hilights */
-  
+
 .rem-text.rem-header--1,
 .rem-text.rem-header--2,
 .rem-text.rem-header--3 {
@@ -381,14 +382,14 @@ i.icon.refresh:before {
   border-color: rgba(0, 0, 0,0.0);
   border-width: 6px;
   background-color:#44475a ;
-  
+
   }
-  
-  
-   
+
+
+
 /*red*/
 .highlight-color--red, .pdf-viewer__highlight-container--red .AreaHighlight, .pdf-viewer__highlight-container--red .Highlight__part {
-  
+
   background-color: #ff5555;
   border-radius: 35px;
   border-left-style: solid;
@@ -545,25 +546,44 @@ i.icon.refresh:before {
     background-color: #44475a;
 }
 /* popups */
+.rich-text-editor__popup-text-editor-alias-container .rich-text-editor__popup-text-editor-alias {
+    background-color: #44475a;
+    color: white;
+    border-color: #44475a;
+    border-radius: 10px;
+}
+.rich-text-editor__popup-text-editor-alias-container {
+   background-color: #44475a;
+    color: white;
+    border-color: #44475a;
+    border-radius: 10px;
+}
 .rem-reference__popup {
     width: 275px;
     font-size: 14px;
     background-color: #282a36;
     border: thing solid #c8c8c8;
-    border-radius: 3px;
+    border-color: #44475a;
+    border-radius: 10px;
 }
 .rem-reference__popup .rem-reference__popup__preview {
     background-color: #282a36;
     color: white;
     font-size: 16px;
-    border-color: #c8c8c8;
-    border-bottom: solid #c8c8c8;
     border-width: thin;
     margin-bottom: 5px;
     padding: 8px 11px;
     font-weight: 700;
-    
+    border-color: #44475a;
+    border-radius: 10px;
 
+
+}
+.controlled-popup {
+    background-color: #44475a;
+    color: white;
+    border-color: #44475a;
+    border-radius: 10px;
 }
 .ui.popup {
     font-size: 14px;
@@ -592,6 +612,8 @@ i.icon.refresh:before {
     border: none;
     border-radius: 3px;
     margin: 10px;
+    min-width: 600px;
+    font-size: 20px;
     padding: 15px 20px!important;
         }
 #document-hover-preview #document-hover-preview__popup
@@ -730,6 +752,7 @@ i.icon.search:before {
     flex-direction: column;
     max-height: calc(100vh - 140px);
 	background-color: #282a36;
+    border-radius: 10px;
 
 }
 .react-contextmenu{
@@ -768,8 +791,8 @@ i.icon.search:before {
     .ui.dropdown .menu {
         color: white;
         background-color:#44475a
-    
-    
+
+
       }  
       #DocumentationList .document-list-item--opened, #documentList .document-list-item--opened {
         font-weight: 700;
@@ -787,7 +810,7 @@ i.icon.search:before {
     #main #content #document-sidebar #documentList .document-list-item:hover {
         background: #6272a4;
     }
-    
+
     #homepage #content #document-sidebar #DocumentationList .document-list-item--opened,
     #homepage #content #document-sidebar #documentList .document-list-item--opened,
     #main #content #document-sidebar #DocumentationList .document-list-item--opened,
@@ -841,11 +864,11 @@ color: white;
 }
 .rem-reference__popup .rem-reference__popup__item {
     color: white;
-    
+
 }
 .rem-reference__popup .rem-reference__popup__item:hover {
     background-color: #6272a4;
-    
+
 }
 .spacedRepetition .spaced-repetition__prompt .spaced-repetition__prompt__breadcrumbs {
     color: white;
@@ -858,4 +881,41 @@ color: white;
 
 
 }  
-  
+.tumbnail--with-width:hover{
+    transform: scale(1.7); 
+    border-radius: 10px;
+ }
+ .tumbnail--with-width{
+    border-radius: 10px;
+ 
+ }
+ 
+ .LinkNode {
+    text-decoration: underline;
+    color: #8be9fd;
+    position: relative;
+}
+.cloze-identifier-popup {
+    background-color: #282a36;
+    color: white;
+    border-color:#282a36 ;
+    border-radius: 10px;
+
+   
+}
+#view-as-card{
+    background-color: #282a36;
+}
+
+.hover-card-menu__view-as-card {
+    background-color: #282a36;
+}
+.cloze-identifier .cloze-identifier-controls {
+    background-color: #44475a;
+    color: white;
+    border-color: #44475a;
+    border-radius: 10px;
+}
+#document .document-title {
+    color: white;
+}
