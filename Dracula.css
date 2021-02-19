@@ -1,6 +1,7 @@
 
 #document {
-    background-color: #282a36;
+     min-width: 1400px;
+     background-color: #282a36;
 }
 #document .document-title {
     color: #131212;
@@ -613,6 +614,7 @@ i.icon.refresh:before {
     border-radius: 3px;
     margin: 10px;
     min-width: 600px;
+	min-height: 600px;
     font-size: 20px;
     padding: 15px 20px!important;
         }
@@ -884,6 +886,8 @@ color: white;
 .tumbnail--with-width:hover{
     transform: scale(1.7); 
     border-radius: 10px;
+	position: absolute;
+	 z-index: +1;
  }
  .tumbnail--with-width{
     border-radius: 10px;
