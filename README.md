@@ -3,8 +3,24 @@
  
  # Images 
    ![image](https://github.com/drstrangez0/Remnote-Dracula-theme/blob/main/images/theme.png)
+   
+   
+   
+   ![image](https://github.com/drstrangez0/Remnote-Dracula-theme/blob/main/images/img1.png)
+   
+   
+   
+   ![image](https://github.com/drstrangez0/Remnote-Dracula-theme/blob/main/images/img2.png)
+   
+   
+   
+   
+   ![image](https://github.com/drstrangez0/Remnote-Dracula-theme/blob/main/images/img3.JPG)
  
- 
+# Fearures
+- Dark colors(dracula)
+- kanban view (thanks to @hannesfrank i only changed the colors)
+- Twekas 
 
 
 
