@@ -15,12 +15,13 @@
    
    
    
-   ![image](https://github.com/drstrangez0/Remnote-Dracula-theme/blob/main/images/img3.JPG)
+   ![image](https://github.com/drstrangez0/Remnote-Dracula-theme/blob/main/images/img3.jpg)
  
 # Fearures
 - Dark colors(dracula)
 - kanban view (thanks to @hannesfrank i only changed the colors)
-- Twekas 
+- support of the last update (1.2)
+- Twekas
 
 
 
