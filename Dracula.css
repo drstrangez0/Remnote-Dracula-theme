@@ -2,8 +2,14 @@
 #document {
   background-color: #282a36;
 }
+.navigation-bar  {
+    background-color: #282a36;
+}
 #document .document-title {
- color: #131212;
+ color:white;
+ background-color: transparent;
+ font-size: 30px;
+ font-weight: 500;
 
 }
 body {
@@ -770,7 +776,7 @@ i.icon.search:before {
 
 }
 .ui.dropdown .menu>.item:hover {
- background-color: #6272a4;
+    background-color: #44475a;
 }
 
 #document-sidebar__link   {
@@ -787,7 +793,7 @@ i.icon.search:before {
      color: white;
  }
  .react-contextmenu--visible .hierarchy-editor__rem-menu:hover {
-     background-color: #6272a4;
+    background-color: #44475a;
  }
  .ui.dropdown .menu {
      color: white;
@@ -797,7 +803,7 @@ i.icon.search:before {
    }  
    #DocumentationList .document-list-item--opened, #documentList .document-list-item--opened {
      font-weight: 700;
-     background-color: transparent;
+     background-color: #44475a;
      border-width: 4px;
      border-left-color: #3b7cc8;
  }
@@ -809,7 +815,7 @@ i.icon.search:before {
  #main #content #document-sidebar #DocumentationList .document-list-item:hover,
  #main #content #document-sidebar #documentList .documentListHeader:hover,
  #main #content #document-sidebar #documentList .document-list-item:hover {
-     background: #6272a4;
+    background-color: #44475a;;
  }
 
  #homepage #content #document-sidebar #DocumentationList .document-list-item--opened,
@@ -819,7 +825,7 @@ i.icon.search:before {
      background: #6272a4;
  }
  #document-sidebar__hiden-link__container:hover {
-     background-color:#6272a4;
+    background-color: #44475a;
  }
 
  #document-sidebar__hiden-link__container {
@@ -836,8 +842,7 @@ i.icon.search:before {
 
 }
 .document-sidebar-item__right-click-menu:hover{
- background-color: #6272a4;
-
+    background-color: #44475a;
 
 }
 #SearchPopup #PinnedResults .PinnedResult {
@@ -868,8 +873,7 @@ color: white;
 
 }
 .rem-reference__popup .rem-reference__popup__item:hover {
- background-color: #6272a4;
-
+    background-color: #44475a;
 }
 .spacedRepetition .spaced-repetition__prompt .spaced-repetition__prompt__breadcrumbs {
  color: white;
@@ -883,14 +887,16 @@ color: white;
 
 }  
 .tumbnail--with-width:hover{
- transition-delay: 250ms;
- transform: scale(1.7); 
- border-radius: 10px;
- position: absolute;
-  z-index: +1;
+    -webkit-transform: scale(2); /* experiment with values */
+    transform: scale(2);
+    position: absolute;
+    z-index: +1;
+    transition-delay: 250ms;
 }
 .tumbnail--with-width{
  border-radius: 10px;
+ transition: transform 0.25s ease;
+
 
 }
 
@@ -919,9 +925,6 @@ color: white;
  color: white;
  border-color: #44475a;
  border-radius: 10px;
-}
-#document .document-title {
- color: white;
 }
 /*kanban*/
 .tree-node-container[data-rem-container-tags~=kanban] > .TreeNode {
@@ -1070,5 +1073,131 @@ color: white;
 }
 .rem-reference--pdf-highlight:hover {
     color: white;
-    background-color: #41668C;
+    background-color: #44475a;}
+#thinking-trail-history:hover #thinking-trail-history__container {
+    background-color:transparent; 
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    margin: 0px;
+}
+
+#thinking-trail-history {
+    margin: 2px;
+}
+/*TT*/
+
+#thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot {
+    background-color:#282a36;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 5px;
+    height: 5px;
+    margin-left: -1px;
+}
+    
+#thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot:hover,
+#thinking-trail-history .thinking-trail-history__document-dot--active {
+    background-color: gray!important;
+    border: 1px solid gray!important;
+    border-radius: 5px!important;
+    width: 7px!important;
+    height: 7px!important;
+    box-shadow: none!important;
+    margin-left: -2px!important;
+}
+   
+#thinking-trail-history .thinking-trail-history__document .thinking-trail-history__children-bar {
+    color: gray;
+}
+
+#thinking-trail-history #thinking-trail-history__container {
+    padding-top: 25px;
+}
+
+#thinking-trail-history .thinking-trail-history__document-height-offset {
+    padding-top: 0.9px;
+}
+
+#thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-height-offset {    
+    background-color: gray;
+}
+    
+#thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot__preview {
+    padding: 2px 7px 0px 5px;
+}    
+
+#thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
+    color: #282a36;         
+}
+
+#thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview {
+    padding: 1px 5px;
+    color: #50fa7b ;
+}
+
+#thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
+    color: #50fa7b ;
+    background-color: #44475a;
+
+}
+  /* Bullets */
+
+  .rem-bullet, .rem-bullet--in-list {
+    width: 0.4em;
+    height: 0.4em;
+    border-radius: 100%;
+    background-color: #50fa7b ;
+    display: inline-block;
+    border: 5px solid #117c2c ; 
+    opacity: 1;
+    box-shadow: 0px 0px 0px 1.25px #117c2c 
+}
+    
+.rem-bullet__icon.rem-bullet--hidden-children { 
+    background-color: #444;
+    border: 3px solid #444; 
+    box-shadow: 0px 0px 0px 1.25px #777;
+}
+
+.rem-bullet__container .rem-bullet__icon.rem-bullet--all-children-visible { 
+    background-color: transparent;
+    border: none; 
+}
+
+.rem-bullet[style*="border-width: 3px;"] {
+    border-width: 3.5px!important;
+}
+
+.rem-bullet__container .rem-bullet--all-children-visible {
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 100%;
+    background-color: #50fa7b ;
+    display: inline-block;
+    border: none; 
+    box-shadow: none;
+}
+
+.rem-container--not-in-article .rem-bullet__container:hover .rem-bullet--all-children-visible,
+.rem-container--not-in-article .rem-bullet__container:hover .rem-bullet, .rem-container--not-in-article .rem-bullet__container:hover .rem-bullet--in-list {
+    border: 3.5px solid #666;
+} 
+.ui.message {
+    color: white;
+    background-color: #44475a;
+}
+.right-click-menu {
+  background-color:#282a36;
+  color: white;
+}
+.document-link__right-click-menu .item:hover {
+    background-color: #44475a;}
+.search-results #search-results__list #search-results__result:hover {
+    background-color: #44475a;
+    
+} 
+.TreeNode--dark-indent-line {
+    border-color: #50fa7b;
+  
 }
