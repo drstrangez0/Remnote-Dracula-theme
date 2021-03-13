@@ -1,9 +1,29 @@
+:root {
+    --main-background-c: #282a36;     /* Main Window, Bottom Bar, Doc View, Sticky Top, Pages, Queue */
+    --secondary-background-c: #44475a;   /* Sidebar, Quotes, icons, Portals, Embedded Search, Settings Menu */
+    --elevated-background-c: #44475a;   /* Queue Cards, Popups */
+    --hover-background-c: #111314;     /* Hover */
+    --border-c: #555;
+    --main-font-spacing: 0.01em;
+    --bold-font-spacing: 0.02em;
+    --semiwide-font-spacing: 0.05em;
+    --wide-font-spacing: 0.1em;
+  
+    --normal-font-weight: 400;
+    --focus-font-weight: 500;
+    --bold-font-weight: 600;
+    --sidebar-width: 240px;
+    --link-image-size:32px;
+    --todo-color:#50fa7b;
+    --todo-check-color:black;
+    --checkbox-size:1.5em;
+  }
 
 #document {
-  background-color: #282a36;
+  background-color: var(--main-background-c);
 }
 .navigation-bar  {
-    background-color: #282a36;
+    background-color: var(--main-background-c);
 }
 #document .document-title {
  color:white;
@@ -21,7 +41,7 @@ body {
  color:white;
 }
 .hierarchy-editor-toolbar-container--opened #hierarchy-editor-toolbar {
-border-color: #ff5555;
+border-color: transparent;
 border-top: solid #282a36;
 background-color: #282a36;
 border-width: thin;
@@ -593,11 +613,13 @@ background-color: #44475a;
 }
 .ui.popup {
  font-size: 14px;
- background-color:#282a36;
+ background-color:var(--secondary-background-c);
  border: thin solid #c8c8c8;
- border-radius: 3px;
+ border-radius: 10px;
  color: white;
+ border-color: transparent;
 }
+
 .toolbar-button {
  color: white;
 }
@@ -713,7 +735,7 @@ color: white;
  background-color: transparent;
 }
 .spacedRepetition .spaced-repetition__prompt .indented-rem .rem-bullet__document {
- background-color: transparent;;
+ background-color: var(--main-background-c);
  display: inline-block;
  padding: 6px;
  border-radius: 5px;
@@ -770,6 +792,7 @@ i.icon.search:before {
 .react-contextmenu--visible #menu-divider {
  border: none;
 }
+
 .ui.dropdown .menu>.item {
  border-radius: 10px;
  color: white;
@@ -778,7 +801,10 @@ i.icon.search:before {
 .ui.dropdown .menu>.item:hover {
     background-color: #44475a;
 }
-
+.ui.dropdown .menu {
+    color: white;
+    background-color:#282a36;
+}
 #document-sidebar__link   {
  padding: 8px 10px 8px 15px;
  margin: 2.5px 0;
@@ -795,12 +821,6 @@ i.icon.search:before {
  .react-contextmenu--visible .hierarchy-editor__rem-menu:hover {
     background-color: #44475a;
  }
- .ui.dropdown .menu {
-     color: white;
-     background-color:#44475a
-
-
-   }  
    #DocumentationList .document-list-item--opened, #documentList .document-list-item--opened {
      font-weight: 700;
      background-color: #44475a;
@@ -919,6 +939,13 @@ color: white;
 
 .hover-card-menu__view-as-card {
  background-color: #282a36;
+ border-radius: 10px;
+ border-color: transparent;
+}
+.hover-card-menu__view-as-card--on-right {
+    background-color:var(--secondary-background-c);
+    border-color: transparent;
+    border-radius: 10px;
 }
 .cloze-identifier .cloze-identifier-controls {
  background-color: #44475a;
@@ -1155,8 +1182,8 @@ color: white;
 }
     
 .rem-bullet__icon.rem-bullet--hidden-children { 
-    background-color: #444;
-    border: 3px solid #444; 
+    background-color: #50fa7b ; 
+    border: 3px solid #50fa7b ;  
     box-shadow: 0px 0px 0px 1.25px #777;
 }
 
@@ -1186,6 +1213,7 @@ color: white;
 .ui.message {
     color: white;
     background-color: #44475a;
+    border-radius: 10px;
 }
 .right-click-menu {
   background-color:#282a36;
@@ -1200,4 +1228,640 @@ color: white;
 .TreeNode--dark-indent-line {
     border-color: #50fa7b;
   
+}
+
+ 
+
+  .ui.checkbox {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 17px;
+    }
+  
+    .ui.checkbox .box:before,
+    .ui.checkbox label:before {
+        border: 1px solid #393f43;
+        box-shadow: rgb(35, 35, 35, 1) 0px 0px 2px 1px inset;
+        border-radius: 4px;
+        background: #292d30;
+    }
+  
+    .ui.checkbox input:checked ~ .box:after,
+    .ui.checkbox input:checked ~ label:after {
+        font-size: 12px;
+        color: var(--main-background-c);
+        background-color: var(--secondary-background-c);
+        transition-duration: 0.1s;
+        transition-delay: 0.05s;
+        border: 2px solid var(--secondary-background-c);
+        box-shadow: rgb(40, 40, 40, 1) 0px 0px 2px 1px;
+        content:"✔";
+        border-radius: 3px;
+        transform: scale(1);
+        visibility: visible;
+    }
+    
+    .ui.checkbox .box:hover:before, .ui.checkbox label:hover:before {
+        border: 1px solid #393f43;
+        box-shadow: rgb(30, 30, 30, 1) 0px 0px 2px 1px inset;
+        border-radius: 4px;
+        background: #292d30;
+    }
+    
+    .ui.checkbox input:checked ~ .box:before,
+    .ui.checkbox input:checked ~ label:before {
+        opacity: 0;
+    }
+  
+    .rem-todo--finished {
+        text-decoration: none;
+        transition-duration: 0.1s;
+    }
+    
+    .rem-todo--finished, .rem-todo--finished .bold  {
+        color:var(--todo-color);
+        text-decoration:line-through;
+    }
+    
+    input[type=checkbox] {
+      transform: scale(0.5);
+    }
+  
+    input[type=checkbox] {
+      width: 15px;
+      height: 0px;
+      margin-top: 2px;
+      margin-right: 15px;
+      cursor: pointer;
+      font-size:var(--checkbox-size);
+      visibility: hidden;
+    }
+  
+    input[type=checkbox]:after {
+      content: "";
+      text-align: center;
+      display: inline-block;
+      padding: 0px;
+      width:var(--checkbox-size);
+      height: var(--checkbox-size);
+      visibility: visible;
+      border: 2px solid rgb(100, 100, 100);
+      box-shadow: rgb(35, 35, 35, 1) 0px 0px 4px 1px inset;
+      border-radius: 7px;
+      background:var(--secondary-background-c);
+      transition-duration: 0.2s;
+    }
+    
+    input[type=checkbox]:checked:after {
+      text-align: center;
+      color: var(--todo-check-color);
+      padding: 0px;
+      font-weight: 800;
+      background-color:var(--todo-color);
+      transition-duration: 0.2s;
+      transition-delay: 0.05s;
+      border: 2px solid var(--todo-color);
+      box-shadow: rgb(30, 30, 30, 1) 0px 0px 4px 1px;
+      content:"✔";
+    }
+    .react-datepicker__month, 
+    .react-datepicker__header,
+    .react-datepicker, 
+    .react-datepicker-wrapper {
+        background-color: var(--elevated-background-c);
+    }
+
+    .react-datepicker__header {
+        border-bottom: none;
+        opacity: 0.5;
+    }
+    
+    .react-datepicker__day, 
+    .react-datepicker__day-name, 
+    .react-datepicker__time-name, 
+    .react-datepicker-time__header, 
+    .react-datepicker__current-month {
+        color: var(--font-c)!important;
+    }
+
+    .react-datepicker__day--in-range, 
+    .react-datepicker__day--in-selecting-range, 
+    .react-datepicker__day--selected {        
+        background-color: var(--main-link-c);
+        opacity: 0.8;
+        color: var(--main-background-c)!important;
+    }
+
+    .react-datepicker__month-container {
+        width: 300px;
+    }
+
+    .react-datepicker__today-button {
+        background: #e0e1e2 none;
+        color: rgba(0, 0, 0, .6);
+        border: none;
+        border-radius: 3px;
+    }
+
+    .react-datepicker__today-button:hover {
+        box-shadow: inset 0 0 0 1px transparent, inset 0 0 0 0 rgba(34, 36, 38, .15);
+        background-color: #cacbcd;
+        background-image: none;
+        color: rgba(0, 0, 0, .8);
+    }
+    
+    .react-datepicker__day:hover {
+        background-color: var(--main-link-c);
+        color: var(--main-background-c)!important;
+        opacity: 0.85;
+    }
+    #image-viewer-popup i.inbox.icon {
+        color: var(--hover-background-c)!important;
+    }
+
+    .image-occlusion__toolbar > .button {
+        font-size: 1em;
+    }
+
+    .image-occlusion__toolbar > .button > .icon {
+        color: var(--hover-background-c)!important;
+    }
+
+    .image-occlusion .image-occlusion__toolbar .image-occlusion__toolbar__dropdown {
+        border: thin solid var(--main-background-c);
+        background-color: var(--elevated-background-c);
+        box-shadow: 
+            rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.2) 0px 0px 6px,
+            rgba(15, 15, 15, 0.5) 0px 0px 24px;
+        border-radius: 4px;
+    }
+
+    #clozeChangeDropdown #ClozeIdentifierInfo {
+        color: var(--font-c);
+    }
+
+    #clozeChangeDropdown .ClozeIdentifierSelected {
+        background-color: hsla(193, 37%, 54%, .3);
+    }
+
+    #clozeChangeDropdown #ClozeIdentifierOption {
+        border: none;
+    }
+
+    #clozeChangeDropdown #ClozeIdentifierOption:hover {
+        background-color: rgba(93, 161, 180, .7);
+    }
+    #code-node,
+    #quote,
+    .quote {
+        background-color: var(--quote-background-c);
+        border: none;
+        color: var(--font-dark-c);
+        padding: 1px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    #code-node {
+        background-color:var(--secondary-background-c)
+    }
+    .hierarchy-editor__tag-bar__tag {
+        color:black;
+        background-color:var(--todo-color);
+        border: none;
+        padding: 1px 5px;
+        text-align: center;
+        text-decoration: none;
+
+        margin: 0px 0px;
+        cursor: pointer;
+        border-radius: 10px; /* change to 4px for rectangular pills */
+               
+    }
+    .hierarchy-editor-toolbar__menu .hierarchy-editor-toolbar__menu__item:hover {
+
+        background-color: var(--main-background-c);
+    }
+    .gray {
+        color: white;
+    }
+    #SearchPopup #PinnedResults .PinnedResult:hover {
+        background-color: var(--secondary-background-c);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons li:hover,
+#ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #main #content #document-sidebar #document-sidebar__buttons-menu__buttons li:hover,
+#ArticleViewer #ArticleViewerStartTakingNotes #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleViewerStartTakingNotesButton:hover,
+#ArticleViewer #ArticleViewerStartTakingNotes #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleViewerStartTakingNotesButton:hover,
+#connectionStatus #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HidePrivateRemButton:hover,
+#connectionStatus #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .signUpLink:hover,
+#connectionStatus #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HidePrivateRemButton:hover,
+#connectionStatus #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .signUpLink:hover,
+#document #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #AddNewDocumentButtonLarge:hover,
+#document #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #AddNewDocumentButtonSmall:hover,
+#document #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #AddNewDocumentButtonLarge:hover,
+#document #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #AddNewDocumentButtonSmall:hover,
+#document .documentMenu #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #selectFolder:hover,
+#document .documentMenu #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .documentOptions:hover,
+#document .documentMenu #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #selectFolder:hover,
+#document .documentMenu #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .documentOptions:hover,
+#document-hover-preview #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemReferencePreview:hover,
+#document-hover-preview #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemReferencePreview:hover,
+#document-parents #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .parent-link:hover,
+#document-parents #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .parent-link:hover,
+#DocumentTable #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentLink:hover,
+#DocumentTable #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentLink:hover,
+#GlobalNameHierarchyViewer #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons  #collapsedButton:hover,
+#GlobalNameHierarchyViewer #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #collapsedButton:hover,
+#hierarchy-editor#homepage #content  #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__add-button:hover,
+#HierarchyEditor #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__embedded-queue-mode-toggle:hover,
+#hierarchy-editor#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--article-link:hover,
+#hierarchy-editor#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .remListNumber:hover,
+#hierarchy-editor#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .HierarchyEditorChildrenList:hover,
+#hierarchy-editor#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__add-button:hover,
+#hierarchy-editor#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__embedded-queue-mode-toggle:hover,
+#hierarchy-editor#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--article-link:hover,
+#hierarchy-editor#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .remListNumber:hover,
+#hierarchy-editor#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .HierarchyEditorChildrenList:hover,
+#hierarchy-editor .remContainer #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-hamburger:hover,
+#HierarchyEditor .remContainer #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .toggleCollapseButton:hover,
+#hierarchy-editor .remContainer #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-hamburger:hover,
+#hierarchy-editor .remContainer #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .toggleCollapseButton:hover,
+#HierarchyEditor .remContainer .portal-remHamburger #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons span:hover,
+#HierarchyEditor .remContainer .portal-remHamburger #main #content #document-sidebar #document-sidebar__buttons-menu__buttons span:hover,
+#HierarchyEditor .remContainer .portal-remHamburgerEmbeddedSearch #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons span:hover,
+#HierarchyEditor .remContainer .portal-remHamburgerEmbeddedSearch #main #content #document-sidebar #document-sidebar__buttons-menu__buttons span:hover,
+#HierarchyEditor .remPotentialProperties #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .potentialProperty:hover,
+#HierarchyEditor .remPotentialProperties #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .potentialProperty:hover,
+#HierarchyEditor .notIncludedInDocumentScope #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .notIncludedAncestorClickable:hover,
+#HierarchyEditor .notIncludedInDocumentScope #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .notIncludedAncestorClickable:hover,
+#HierarchyEditorCtrlF #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .icon:hover,
+#HierarchyEditorCtrlF #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .icon:hover,
+#hierarchyEditorGlobalInsertContainer #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#hierarchyEditorGlobalInsertContainer #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__tag-bar__tag__delete:hover,
+#hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__tag-bar__tag__delete:hover,
+#homepage #callToActionButtons #content #document-sidebar #document-sidebar__buttons-menu__buttons a:hover,
+#homepage #callToActionButtons #main #content #document-sidebar #document-sidebar__buttons-menu__buttons a:hover,
+#homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#homepage #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #content #document-sidebar #DocumentationList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#homepage #content #document-sidebar #documentList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #content #document-sidebar #documentList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul li:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleDocumentButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleViewer #ArticleViewerStartTakingNotes #ArticleViewerStartTakingNotesButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #callToActionButtons a:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #connectionStatus #HidePrivateRemButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #connectionStatus .signUpLink:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document #AddNewDocumentButtonLarge:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document #AddNewDocumentButtonSmall:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document .documentMenu #selectFolder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document .documentMenu .documentOptions:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .actionRequiredDocumentLink:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .documentListHeader:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .documentListHeader .folder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .document-list-item .folder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .folderFloatButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-hover-preview #RemReferencePreview:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .actionRequiredDocumentLink:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .documentListHeader:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .documentListHeader .folder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .document-list-item .folder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .folderFloatButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-parents .parent-link:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__hiden-link__container:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link--sign_up:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentTable .DocumentLink:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #EmbeddedSearchRefresh:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #GlobalNameHierarchyViewer #collapsedButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hide-walkthrough-link-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor#hierarchy-editor__add-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor #hierarchy-editor__embedded-queue-mode-toggle:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .rem-container--article-link:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .remContainer .rem-hamburger:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remContainer .portal-remHamburgerEmbeddedSearch span:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remContainer .portal-remHamburger span:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remContainer .toggleCollapseButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .remListNumber:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remPotentialProperties .potentialProperty:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .HierarchyEditorChildrenList:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .notIncludedInDocumentScope .notIncludedAncestorClickable:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditorCtrlF .icon:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchyEditorGlobalInsertContainer #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #hierarchy-editor__tag-bar__tag__delete:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ImportEntireArticle:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #leech-card #leech-card__fixes .LeechAction:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #mobile-queue__shortcuts #mobile-queue__shortcuts__button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #MobileSearchRemButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #multiple-windows .multiple-windows__document #multiple-windows__close-pane:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #OtherRemBlock #other-rem-block__title #close-other-rem-block-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #OtherRemBlock #other-rem-block__title #open-as-doc-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #other-rem-stack__close:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #PluginNode #PluginHamburgerMenu:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #Popup #popup-close-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #PrivateRemBlocker:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #rem-reference__exclude-type-parent:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemSelector #RemSelectorOption:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #RabbitQueueTopRightButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchPopup #PinnedResults .PinnedResult:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchPopup .SearchPopupResults #SearchResultsResult:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #show-embedded-search-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #thinking-trail-history .thinking-trail-history__document-dot:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #UpdateIndicator:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #zoomIntoRemBackDocument:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .queue__response-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #ActionQueueOfflineIndicator:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #ActionQueueOnlyActionRequiredSwitcher:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #queue__title #QueueBackButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .addListItemButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .AnnotationNode:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--big:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--big:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .blackOut:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .color-button-container:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentSidebarSmall #viewDocuments:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--not-in-article .rem-bullet__container:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--not-in-article .rem-bulletIcon:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #NoFocusedRemToolbarNoticeClose:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar .ToolbarDuplicateKeyButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened .HierarchyEditorToolbarButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .ImportAllContentsButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .LinkNode:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .popup #BulletFormatIcons .icon:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .popup .color-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .react-contextmenu--visible .hierarchy-editor__rem-menu:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rich-text-editor__selected-text-menu .selected-text-menu__button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rich-text-editor__selected-text-menu .selected-text-menu__button--color-container:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .SearchResults #search-results__list #SearchResultsResult:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .sortSidebarOption:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .spacedRepetition .spaced-repetition__reveal:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--no-width:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--popup:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--small:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--with-width:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .whiteButton:hover,
+#homepage #content .DocumentSidebarSmall #document-sidebar #document-sidebar__buttons-menu__buttons #viewDocuments:hover,
+#homepage #main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#homepage #main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#homepage #main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#homepage #main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#homepage #main #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #main #content #document-sidebar #DocumentationList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#homepage #main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#homepage #main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#homepage #main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#homepage #main #content #document-sidebar  #documentList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #main #content #document-sidebar #documentList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .actionRequiredDocumentLink:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .documentListHeader:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .documentListHeader .folder:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .document-list-item .folder:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .folderFloatButton:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .actionRequiredDocumentLink:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .documentListHeader:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .documentListHeader .folder:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .document-list-item .folder:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .folderFloatButton:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link--sign_up:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hide-walkthrough-link-button:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentSidebarSmall #viewDocuments:hover,
+#homepage #main #content .DocumentSidebarSmall #document-sidebar #document-sidebar__buttons-menu__buttons #viewDocuments:hover,
+#leech-card #leech-card__fixes #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .LeechAction:hover,
+#leech-card #leech-card__fixes #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .LeechAction:hover,
+#main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#main #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #content #document-sidebar #DocumentationList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#main #content #document-sidebar #documentList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #content #document-sidebar #documentList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul li:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleDocumentButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleViewer #ArticleViewerStartTakingNotes #ArticleViewerStartTakingNotesButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #connectionStatus #HidePrivateRemButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #connectionStatus .signUpLink:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document #AddNewDocumentButtonLarge:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document #AddNewDocumentButtonSmall:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document .documentMenu #selectFolder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document .documentMenu .documentOptions:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .actionRequiredDocumentLink:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .documentListHeader:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .documentListHeader .folder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .document-list-item .folder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .folderFloatButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-hover-preview #RemReferencePreview:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .actionRequiredDocumentLink:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .documentListHeader:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .documentListHeader .folder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .document-list-item .folder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .folderFloatButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-parents .parent-link:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__hiden-link__container:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link--sign_up:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentTable .DocumentLink:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #EmbeddedSearchRefresh:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #GlobalNameHierarchyViewer #collapsedButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hide-walkthrough-link-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor#hierarchy-editor__add-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor#hierarchy-editor__embedded-queue-mode-toggle:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .rem-container--article-link:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .remContainer .rem-hamburger:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remContainer .portal-remHamburgerEmbeddedSearch span:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remContainer .portal-remHamburger span:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .remContainer .toggleCollapseButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .remListNumber:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remPotentialProperties .potentialProperty:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .HierarchyEditorChildrenList:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .notIncludedInDocumentScope .notIncludedAncestorClickable:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditorCtrlF .icon:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchyEditorGlobalInsertContainer #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #hierarchy-editor__tag-bar__tag__delete:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #homepage #callToActionButtons a:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ImportEntireArticle:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #leech-card #leech-card__fixes .LeechAction:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #mobile-queue__shortcuts #mobile-queue__shortcuts__button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #MobileSearchRemButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #multiple-windows .multiple-windows__document #multiple-windows__close-pane:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #OtherRemBlock #other-rem-block__title #close-other-rem-block-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #OtherRemBlock #other-rem-block__title #open-as-doc-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #other-rem-stack__close:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #PluginNode #PluginHamburgerMenu:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #Popup #popup-close-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #PrivateRemBlocker:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #rem-reference__exclude-type-parent:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemSelector #RemSelectorOption:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #RabbitQueueTopRightButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchPopup #PinnedResults .PinnedResult:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchPopup .SearchPopupResults #SearchResultsResult:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #show-embedded-search-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #thinking-trail-history .thinking-trail-history__document-dot:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #UpdateIndicator:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #zoomIntoRemBackDocument:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .queue__response-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #ActionQueueOfflineIndicator:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #ActionQueueOnlyActionRequiredSwitcher:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #queue__title #QueueBackButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .addListItemButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .AnnotationNode:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--big:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--big:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .blackOut:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .color-button-container:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentSidebarSmall #viewDocuments:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--not-in-article .rem-bullet__container:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--not-in-article .rem-bulletIcon:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #NoFocusedRemToolbarNoticeClose:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar .ToolbarDuplicateKeyButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened .HierarchyEditorToolbarButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .ImportAllContentsButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .LinkNode:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .popup #BulletFormatIcons .icon:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .popup .color-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .react-contextmenu--visible .hierarchy-editor__rem-menu:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rich-text-editor__selected-text-menu .selected-text-menu__button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rich-text-editor__selected-text-menu .selected-text-menu__button--color-container:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .SearchResults #search-results__list #SearchResultsResult:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .sortSidebarOption:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .spacedRepetition .spaced-repetition__reveal:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--no-width:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--popup:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--small:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--with-width:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .whiteButton:hover,
+#main #content .DocumentSidebarSmall #document-sidebar #document-sidebar__buttons-menu__buttons #viewDocuments:hover,
+#main #homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#main #homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#main #homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#main #homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#main #homepage #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #homepage #content #document-sidebar #DocumentationList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#main #homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#main #homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#main #homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#main #homepage #content #document-sidebar #documentList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #homepage #content #document-sidebar #documentList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .actionRequiredDocumentLink:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .documentListHeader:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .documentListHeader .folder:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .document-list-item .folder:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .folderFloatButton:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .actionRequiredDocumentLink:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .documentListHeader:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .documentListHeader .folder:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .document-list-item .folder:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .folderFloatButton:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link--sign_up:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hide-walkthrough-link-button:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentSidebarSmall #viewDocuments:hover,
+#main #homepage #content .DocumentSidebarSmall #document-sidebar #document-sidebar__buttons-menu__buttons #viewDocuments:hover,
+#mobile-queue__shortcuts #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #mobile-queue__shortcuts__button:hover,
+#mobile-queue__shortcuts #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #mobile-queue__shortcuts__button:hover,
+#multiple-windows .multiple-windows__document #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #multiple-windows__close-pane:hover,
+#multiple-windows .multiple-windows__document #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #multiple-windows__close-pane:hover,
+#OtherRemStack #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #other-rem-stack__close:hover,
+#OtherRemStack #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #other-rem-stack__close:hover,
+#OtherRemStack #OtherRemBlock #other-rem-block__title #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #close-other-rem-block-button:hover,
+#OtherRemStack #OtherRemBlock #other-rem-block__title #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #open-as-doc-button:hover,
+#OtherRemStack #OtherRemBlock #other-rem-block__title #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #close-other-rem-block-button:hover,
+#OtherRemStack #OtherRemBlock #other-rem-block__title #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #open-as-doc-button:hover,
+#PluginNode #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #PluginHamburgerMenu:hover,
+#PluginNode #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #PluginHamburgerMenu:hover,
+#Popup #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #popup-close-button:hover,
+#Popup #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #popup-close-button:hover,
+#RemSelector #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemSelectorOption:hover,
+#RemSelector #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemSelectorOption:hover,
+#SearchPopup #PinnedResults #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .PinnedResult:hover,
+#SearchPopup #PinnedResults #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .PinnedResult:hover,
+#SearchPopup .SearchPopupResults #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchResultsResult:hover,
+#SearchPopup .SearchPopupResults #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchResultsResult:hover,
+#thinking-trail-history #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .thinking-trail-history__document-dot:hover,
+#thinking-trail-history #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .thinking-trail-history__document-dot:hover,
+.Queue #queue__title #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #QueueBackButton:hover,
+.Queue #queue__title #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #QueueBackButton:hover,
+.Queue #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueOfflineIndicator:hover,
+.Queue #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueOnlyActionRequiredSwitcher:hover,
+.Queue #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueOfflineIndicator:hover,
+.Queue #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueOnlyActionRequiredSwitcher:hover,
+.rem-container--not-in-article #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-bullet__container:hover,
+.rem-container--not-in-article #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-bulletIcon:hover,
+.rem-container--not-in-article #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-bullet__container:hover,
+.rem-container--not-in-article #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-bulletIcon:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .ToolbarDuplicateKeyButton:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .ToolbarDuplicateKeyButton:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #NoFocusedRemToolbarNoticeClose:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #NoFocusedRemToolbarNoticeClose:hover,
+.hierarchyEditorGlobalInsertContainerOpened #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .HierarchyEditorToolbarButton:hover,
+.hierarchyEditorGlobalInsertContainerOpened #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .HierarchyEditorToolbarButton:hover,
+.popup #BulletFormatIcons #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .icon:hover,
+.popup #BulletFormatIcons #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .icon:hover,
+.popup #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .color-button:hover,
+.popup #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .color-button:hover,
+.react-contextmenu--visible #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchy-editor__rem-menu:hover,
+.react-contextmenu--visible #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchy-editor__rem-menu:hover,
+.rich-text-editor__selected-text-menu #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .selected-text-menu__button:hover,
+.rich-text-editor__selected-text-menu #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .selected-text-menu__button--color-container:hover,
+.rich-text-editor__selected-text-menu #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .selected-text-menu__button:hover,
+.rich-text-editor__selected-text-menu #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .selected-text-menu__button--color-container:hover,
+.SearchResults #search-results__list #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchResultsResult:hover,
+.SearchResults #search-results__list #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchResultsResult:hover,
+.spacedRepetition #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .spaced-repetition__reveal:hover,
+.spacedRepetition #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .spaced-repetition__reveal:hover,
+#GlobalNameHierarchyViewer #GlobalNameHierarchyViewerSelf:hover {
+    color: white;
+    background-color: #44475a;
+
 }
