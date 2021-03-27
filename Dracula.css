@@ -18,7 +18,7 @@
     --todo-check-color:black;
     --checkbox-size:1.5em;
     --bullet-main:var(--secondary-background-c);
-    --bullet-doc:var(--secondary-background-c);
+    --bullet-doc:#50fa7b;
     --bullet-folder:var(--secondary-background-c);
     --bullet-concept:var(--secondary-background-c);
     --bullet-descriptor:var(--secondary-background-c);
@@ -405,20 +405,24 @@ i.icon.refresh:before {
 }
 /* hilights */
 
-.rem-text.rem-header--1,
-.rem-text.rem-header--2,
-.rem-text.rem-header--3 {
-margin-top: 3px;
-border-radius: 30px;
-border-left-style: solid;
-border-right-style: solid;
-border-color: rgba(0, 0, 0,0.0);
-border-width: 6px;
-background-color:#44475a ;
-opacity: 0.65;
 
+.rem-text.rem-header--1{
+    background-color: transparent;
+    font-size: 25px;
+    color: white;
 
 }
+.rem-text.rem-header--2{
+    background-color: transparent;
+    font-size: 23x;
+    color: white;
+}
+.rem-text.rem-header--3{
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+}
+
 
 
 
