@@ -17,11 +17,11 @@
     --todo-color:#50fa7b;
     --todo-check-color:black;
     --checkbox-size:1.5em;
-    --bullet-main:var(--secondary-background-c);
+    --bullet-main:#53555f;
     --bullet-doc:#50fa7b;
-    --bullet-folder:var(--secondary-background-c);
-    --bullet-concept:var(--secondary-background-c);
-    --bullet-descriptor:var(--secondary-background-c);
+    --bullet-folder:#53555f;
+    --bullet-concept:#53555f;
+    --bullet-descriptor:#53555f;
   }
 
 #document {
