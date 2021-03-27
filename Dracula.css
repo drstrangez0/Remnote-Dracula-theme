@@ -17,6 +17,11 @@
     --todo-color:#50fa7b;
     --todo-check-color:black;
     --checkbox-size:1.5em;
+    --bullet-main:var(--secondary-background-c);
+    --bullet-doc:var(--secondary-background-c);
+    --bullet-folder:var(--secondary-background-c);
+    --bullet-concept:var(--secondary-background-c);
+    --bullet-descriptor:var(--secondary-background-c);
   }
 
 #document {
@@ -30,6 +35,8 @@
  background-color: transparent;
  font-size: 30px;
  font-weight: 500;
+ text-align: center;
+ font-family:fantasy;
 
 }
 body {
@@ -408,6 +415,8 @@ border-right-style: solid;
 border-color: rgba(0, 0, 0,0.0);
 border-width: 6px;
 background-color:#44475a ;
+opacity: 0.65;
+
 
 }
 
@@ -1103,7 +1112,7 @@ color: white;
     color: white;
     background-color: #44475a;}
 #thinking-trail-history:hover #thinking-trail-history__container {
-    background-color:transparent; 
+    background-color:var(--secondary-background-c); 
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
@@ -1116,7 +1125,7 @@ color: white;
 /*TT*/
 
 #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot {
-    background-color:#282a36;
+    background-color:var(s);
     border: 1px solid gray;
     border-radius: 5px;
     width: 5px;
@@ -1161,56 +1170,16 @@ color: white;
 
 #thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview {
     padding: 1px 5px;
-    color: #50fa7b ;
+    color: white ;
 }
 
 #thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
-    color: #50fa7b ;
-    background-color: #44475a;
+    color: white ;
+    background-color:var(--main-background-c);
 
 }
-  /* Bullets */
-
-  .rem-bullet, .rem-bullet--in-list {
-    width: 0.4em;
-    height: 0.4em;
-    border-radius: 100%;
-    background-color: #50fa7b ;
-    display: inline-block;
-    border: 5px solid #117c2c ; 
-    opacity: 1;
-    box-shadow: 0px 0px 0px 1.25px #117c2c 
-}
-    
-.rem-bullet__icon.rem-bullet--hidden-children { 
-    background-color: #50fa7b ; 
-    border: 3px solid #50fa7b ;  
-    box-shadow: 0px 0px 0px 1.25px #777;
-}
-
-.rem-bullet__container .rem-bullet__icon.rem-bullet--all-children-visible { 
-    background-color: transparent;
-    border: none; 
-}
-
-.rem-bullet[style*="border-width: 3px;"] {
-    border-width: 3.5px!important;
-}
-
-.rem-bullet__container .rem-bullet--all-children-visible {
-    width: 0.5em;
-    height: 0.5em;
-    border-radius: 100%;
-    background-color: #50fa7b ;
-    display: inline-block;
-    border: none; 
-    box-shadow: none;
-}
-
-.rem-container--not-in-article .rem-bullet__container:hover .rem-bullet--all-children-visible,
-.rem-container--not-in-article .rem-bullet__container:hover .rem-bullet, .rem-container--not-in-article .rem-bullet__container:hover .rem-bullet--in-list {
-    border: 3.5px solid #666;
-} 
+/*ui*/
+  
 .ui.message {
     color: white;
     background-color: #44475a;
@@ -1231,7 +1200,7 @@ color: white;
   
 }
 
- 
+
 
   .ui.checkbox {
         margin-left: auto;
@@ -1431,14 +1400,7 @@ color: white;
     .hierarchy-editor__tag-bar__tag {
         color:black;
         background-color:var(--todo-color);
-        border: none;
-        padding: 1px 5px;
-        text-align: center;
-        text-decoration: none;
-
-        margin: 0px 0px;
-        cursor: pointer;
-        border-radius: 10px; /* change to 4px for rectangular pills */
+        border-radius: 10px;
                
     }
     .hierarchy-editor-toolbar__menu .hierarchy-editor-toolbar__menu__item:hover {
@@ -1454,29 +1416,157 @@ color: white;
 
 
 
+/* Main open and closed bullet for headers */
+.rem-bullet__container
+.rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--1 {
+border: 2px solid var(--bullet-main);
+background-color: transparent;
+height: 7px !important;
+width: 7px !important;
+
+}
+
+.rem-bullet__container
+.rem-bullet.rem-bullet--hidden-children.rem-header__bullet--1 {
+border: 2px solid var(--bullet-main) !important;
+background-color: var(--bullet-main);
+height: 7px !important;
+width: 7px !important;
+}
+
+.rem-bullet__container
+.rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--2 {
+border: 2px solid var(--bullet-main);
+background-color: transparent;
+height: 7px !important;
+width: 7px !important;
+}
+
+.rem-bullet__container
+.rem-bullet.rem-bullet--hidden-children.rem-header__bullet--2 {
+border: 2px solid var(--bullet-main) !important;
+background-color: var(--bullet-main);
+height: 7px !important;
+width: 7px !important;
+}
+
+.rem-bullet__container
+.rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--3 {
+border: 2px solid var(--bullet-main);
+background-color: transparent;
+height: 7px !important;
+width: 7px !important;
+}
+
+.rem-bullet__container
+.rem-bullet.rem-bullet--hidden-children.rem-header__bullet--3 {
+border: 2px solid var(--bullet-main) !important;
+background-color: var(--bullet-main);
+height: 7px !important;
+width: 7px !important;
+}
+
+/* Paragraph Bullet */
+.rem-bullet__container .rem-bullet.rem-bullet--all-children-visible {
+border: 2px solid var(--bullet-main) !important;
+background-color: transparent;
+height: 7px !important;
+width: 7px !important;
+}
+
+.rem-bullet__container .rem-bullet.rem-bullet--hidden-children {
+border: 2px solid var(--bullet-main) !important;
+background-color: var(--bullet-main);
+height: 7px !important;
+width: 7px !important;
+}
+
+/* Document Bullet */
+.file.small.icon.rem-bullet__icon.rem-bullet--hidden-children,
+.file.small.icon.rem-bullet__icon.rem-bullet--all-children-visible {
+border: 2px solid var(--bullet-doc) !important;
+background-color: transparent;
+height: 7px !important;
+width: 7px !important;
+border-radius: 3px;
+}
+
+.file.small.icon.rem-bullet__icon.rem-bullet--hidden-children {
+border: 2px solid var(--bullet-doc) !important;
+background-color: var(--bullet-doc);
+height: 7px !important;
+width: 7px !important;
+border-radius: 3px;
+}
+
+.file.small.icon.rem-bullet__icon.rem-bullet--hidden-children::before,
+.file.small.icon.rem-bullet__icon.rem-bullet--all-children-visible::before {
+display: none;
+}
+
+/* Folder Bullet */
+.folder.small.icon.rem-bullet__icon.rem-bullet--hidden-children,
+.folder.small.icon.rem-bullet__icon.rem-bullet--all-children-visible {
+border: 2px solid var(--bullet-folder) !important;
+background-color: transparent;
+height: 7px !important;
+width: 7px !important;
+border-radius: 3px;
+}
+
+.folder.small.icon.rem-bullet__icon.rem-bullet--hidden-children {
+border: 2px solid var(--bullet-folder) !important;
+background-color: var(--bullet-folder);
+height: 7px !important;
+width: 7px !important;
+border-radius: 3px;
+}
+
+.folder.small.icon.rem-bullet__icon.rem-bullet--hidden-children::before,
+.folder.small.icon.rem-bullet__icon.rem-bullet--all-children-visible::before {
+display: none;
+}
+
+/* Concept Rem type Bullet */
+.rem-container--concept-rem-type
+.rem-bullet__container
+.rem-bullet.rem-bullet--all-children-visible {
+border: 2px solid var(--bullet-concept) !important;
+background-color: transparent;
+height: 7px !important;
+width: 7px !important;
+}
+
+.rem-container--concept-rem-type
+.rem-bullet__container
+.rem-bullet.rem-bullet--hidden-children {
+border: 2px solid var(--bullet-concept) !important;
+background-color: var(--bullet-concept);
+height: 7px !important;
+width: 7px !important;
+}
+
+/* Descriptor Rem type Bullet */
+.rem-container--descriptor-rem-type
+.rem-bullet__container
+.rem-bullet.rem-bullet--all-children-visible {
+border: 2px solid var(--bullet-descriptor) !important;
+background-color: transparent;
+height: 7px !important;
+width: 7px !important;
+}
+
+.rem-container--descriptor-rem-type
+.rem-bullet__container
+.rem-bullet.rem-bullet--hidden-children {
+border: 2px solid var(--bullet-descriptor) !important;
+background-color: var(--bullet-descriptor);
+height: 7px !important;
+width: 7px !important;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons li:hover,
+#ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons li:hover,
 #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #main #content #document-sidebar #document-sidebar__buttons-menu__buttons li:hover,
 #ArticleViewer #ArticleViewerStartTakingNotes #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleViewerStartTakingNotesButton:hover,
 #ArticleViewer #ArticleViewerStartTakingNotes #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleViewerStartTakingNotesButton:hover,
@@ -1863,6 +1953,6 @@ color: white;
 .spacedRepetition #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .spaced-repetition__reveal:hover,
 #GlobalNameHierarchyViewer #GlobalNameHierarchyViewerSelf:hover {
     color: white;
-    background-color: #44475a;
+    background-color: var(--main-background-c);
 
 }
