@@ -23,7 +23,33 @@
     --bullet-concept:#53555f;
     --bullet-descriptor:#53555f;
   }
+  .TreeNode {
+    border-color: #ff5555 !important ;
+}
+.TreeNode .TreeNode {
+    border-color:#ffb86c !important ;
+   
+}
+.TreeNode .TreeNode .TreeNode {
+    border-color: #f1fa8c !important ;
+   
+}
+.TreeNode .TreeNode .TreeNode .TreeNode  {
+    border-color: #50fa7b !important ;
+   
+}
+.TreeNode .TreeNode .TreeNode .TreeNode .TreeNode  {
+    border-color: #8be9fd !important ;
+   
+}
+.TreeNode .TreeNode .TreeNode .TreeNode .TreeNode .TreeNode   {
+    border-color: #ff79c6 !important ;
+   
+}
 
+#document-sidebar_top #logo {
+    display: none;
+}
 #document {
   background-color: var(--main-background-c);
 }
@@ -158,7 +184,6 @@ color:#f5f1f1;
 
 /* portl */
 #hierarchy-editor .TreeNode {
- border-color: #e5e5e5;
  border-width: 2px;
  transition-timing-function: linear;
  position: relative;
@@ -170,7 +195,6 @@ color:#f5f1f1;
  margin-bottom: 0px;
 }
 #hierarchy-editor .TreeNode--dark-indent-line {
- border-color: #bcbcbc!important;
  border-width: 2px;
  background-color: transparent;
 }
@@ -414,7 +438,7 @@ i.icon.refresh:before {
 }
 .rem-text.rem-header--2{
     background-color: transparent;
-    font-size: 23x;
+    font-size: 23px;
     color: white;
 }
 .rem-text.rem-header--3{
@@ -889,13 +913,8 @@ i.icon.search:before {
 color: white;
 }
 #quote {
- background-color: #6272a4;
- border: .7px solid #c8c8c8;
- border-radius: 4px;
- padding-right: 2px;
- padding-left: 2px;
- margin-right: 2px;
- margin-left: 2px;
+ background-color:#48484d;
+ border:none;
 }
 #SearchPopup {
 color: white;
@@ -1199,106 +1218,9 @@ color: white;
     background-color: #44475a;
     
 } 
-.TreeNode--dark-indent-line {
-    border-color: #50fa7b;
-  
-}
 
 
 
-  .ui.checkbox {
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-        width: 17px;
-    }
-  
-    .ui.checkbox .box:before,
-    .ui.checkbox label:before {
-        border: 1px solid #393f43;
-        box-shadow: rgb(35, 35, 35, 1) 0px 0px 2px 1px inset;
-        border-radius: 4px;
-        background: #292d30;
-    }
-  
-    .ui.checkbox input:checked ~ .box:after,
-    .ui.checkbox input:checked ~ label:after {
-        font-size: 12px;
-        color: var(--main-background-c);
-        background-color: var(--secondary-background-c);
-        transition-duration: 0.1s;
-        transition-delay: 0.05s;
-        border: 2px solid var(--secondary-background-c);
-        box-shadow: rgb(40, 40, 40, 1) 0px 0px 2px 1px;
-        content:"✔";
-        border-radius: 3px;
-        transform: scale(1);
-        visibility: visible;
-    }
-    
-    .ui.checkbox .box:hover:before, .ui.checkbox label:hover:before {
-        border: 1px solid #393f43;
-        box-shadow: rgb(30, 30, 30, 1) 0px 0px 2px 1px inset;
-        border-radius: 4px;
-        background: #292d30;
-    }
-    
-    .ui.checkbox input:checked ~ .box:before,
-    .ui.checkbox input:checked ~ label:before {
-        opacity: 0;
-    }
-  
-    .rem-todo--finished {
-        text-decoration: none;
-        transition-duration: 0.1s;
-    }
-    
-    .rem-todo--finished, .rem-todo--finished .bold  {
-        color:var(--todo-color);
-        text-decoration:line-through;
-    }
-    
-    input[type=checkbox] {
-      transform: scale(0.5);
-    }
-  
-    input[type=checkbox] {
-      width: 15px;
-      height: 0px;
-      margin-top: 2px;
-      margin-right: 15px;
-      cursor: pointer;
-      font-size:var(--checkbox-size);
-      visibility: hidden;
-    }
-  
-    input[type=checkbox]:after {
-      content: "";
-      text-align: center;
-      display: inline-block;
-      padding: 0px;
-      width:var(--checkbox-size);
-      height: var(--checkbox-size);
-      visibility: visible;
-      border: 2px solid rgb(100, 100, 100);
-      box-shadow: rgb(35, 35, 35, 1) 0px 0px 4px 1px inset;
-      border-radius: 7px;
-      background:var(--secondary-background-c);
-      transition-duration: 0.2s;
-    }
-    
-    input[type=checkbox]:checked:after {
-      text-align: center;
-      color: var(--todo-check-color);
-      padding: 0px;
-      font-weight: 800;
-      background-color:var(--todo-color);
-      transition-duration: 0.2s;
-      transition-delay: 0.05s;
-      border: 2px solid var(--todo-color);
-      box-shadow: rgb(30, 30, 30, 1) 0px 0px 4px 1px;
-      content:"✔";
-    }
     .react-datepicker__month, 
     .react-datepicker__header,
     .react-datepicker, 
@@ -1387,20 +1309,6 @@ color: white;
     #clozeChangeDropdown #ClozeIdentifierOption:hover {
         background-color: rgba(93, 161, 180, .7);
     }
-    #code-node,
-    #quote,
-    .quote {
-        background-color: var(--quote-background-c);
-        border: none;
-        color: var(--font-dark-c);
-        padding: 1px;
-        padding-left: 7px;
-        padding-right: 7px;
-    }
-
-    #code-node {
-        background-color:var(--secondary-background-c)
-    }
     .hierarchy-editor__tag-bar__tag {
         color:black;
         background-color:var(--todo-color);
@@ -1416,6 +1324,13 @@ color: white;
     }
     #SearchPopup #PinnedResults .PinnedResult:hover {
         background-color: var(--secondary-background-c);
+    }
+    .gutter {     
+        background-color: var(--main-background-c); 
+    } 
+    
+    .gutter:hover {     
+        background-color:#50fa7b; 
     }
 
 
@@ -1568,7 +1483,27 @@ background-color: var(--bullet-descriptor);
 height: 7px !important;
 width: 7px !important;
 }
+#hierarchy-editor .rem-container--focused {
+    background-color: #44475a;
+    border-radius: 10px;
+    margin-left: -20px;
+    padding-left: 30px;    
+} 
+.mobile-quick-add .mobile-quick-add__rich-text-editor, .mobile-quick-add textarea {
+    background-color:#44475a;
+    color: white;
+}
+.mosaic-default-control {
+background-color: var(--main-background-c);
+}
+.tile__document {
+    background-color: var(--main-background-c);
 
+} 
+.mosaic-window-title {
+    background-color: var(--main-background-c);
+
+}
 
 #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons li:hover,
 #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #main #content #document-sidebar #document-sidebar__buttons-menu__buttons li:hover,
