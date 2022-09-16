@@ -15,6 +15,8 @@
    
    ![image](https://github.com/drstrangez0/Remnote-Dracula-theme/blob/main/images/Note%20example.png)
    
+   ![image](https://github.com/drstrangez0/Remnote-Dracula-theme/blob/main/images/2nd.png)
+ 
    
    
   
