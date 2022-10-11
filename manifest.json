@@ -1,0 +1,17 @@
+{
+  "manifestVersion": 1,
+  "id": "dracula_theme",
+  "name": "Dracula Theme",
+  "author": "DrStrangez0",
+  "repoUrl": "https://github.com/drstrangez0/Remnote-Dracula-theme",
+  "enableOnMobile": false,
+  "version": {
+    "major": 0,
+    "minor": 0,
+    "patch": 1
+  },
+  "theme": ["dark"],
+  "description": "🧛 Dracula theme for RemNote. Requires dark mode.",
+  "requestNative": false,
+  "requiredScopes": []
+}
