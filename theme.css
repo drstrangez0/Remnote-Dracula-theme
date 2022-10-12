@@ -1,4 +1,4 @@
-
+ 
  @import url('https://fonts.googleapis.com/css2 family=Grape+Nuts&family=Shadows+Into+Light&display=swap');
 :root{
 
@@ -18,6 +18,7 @@
     /*
     Main
     */
+    
     .rn-pane__body{
     background-color: var(--main-color);
     }
@@ -42,6 +43,9 @@
     
         background-color: var(--main-color); 
     }
+    #document-sidebar {
+  background-color: var(--main-color); 
+}
     .rn-clr-background-secondary{
         background-color: var(--scoendary-clolor); 
     }
@@ -51,9 +55,7 @@
     .rn-clr-content-tertiary {
     color: white!important;
     }
-    .rn-rem-bullet{
-    color: white!important;
-    } 
+   
     .rn-all-notes{
     color: white!important;
        /*
@@ -176,6 +178,7 @@
     }
     .rn-rem-reference{
         color: var(--H-red);
+        text-decoration: underline 2px;
     }
     .bold {
         font-weight: 700;
@@ -186,6 +189,7 @@
        }
        .rn-editor__rem__body__text--h1{
         font-family: 'Shadows Into Light', cursive!important;
+        
 
        }
        .rn-editor__rem__body__text--h2{
@@ -200,30 +204,36 @@
         font-family: 'Shadows Into Light', cursive !important;
 
        }
-       
-         /*
-    Colred inendtions 
-    */
        .TreeNode {
-        border-color: #ff5555 !important ;
-    }
-    .TreeNode .TreeNode {
-        border-color:#ffb86c !important ;
-       
-    }
-    .TreeNode .TreeNode .TreeNode {
-        border-color: #f1fa8c !important ;
-       
-    }
-    .TreeNode .TreeNode .TreeNode .TreeNode  {
-        border-color: #50fa7b !important ;
-       
-    }
-    .TreeNode .TreeNode .TreeNode .TreeNode .TreeNode  {
-        border-color: #8be9fd !important ;
-       
-    }
-    .TreeNode .TreeNode .TreeNode .TreeNode .TreeNode .TreeNode   {
-        border-color: #ff79c6 !important ;
-       
-    }
+    border-color: #ff5555 !important ;
+}
+.TreeNode .TreeNode {
+    border-color:#ffb86c !important ;
+   
+}
+.TreeNode .TreeNode .TreeNode {
+    border-color: #f1fa8c !important ;
+   
+}
+.TreeNode .TreeNode .TreeNode .TreeNode  {
+    border-color: #50fa7b !important ;
+   
+}
+.TreeNode .TreeNode .TreeNode .TreeNode .TreeNode  {
+    border-color: #8be9fd !important ;
+   
+}
+.TreeNode .TreeNode .TreeNode .TreeNode .TreeNode .TreeNode   {
+    border-color: #ff79c6 !important ;
+   
+}
+.cloze {
+ background-color: rgba(210,225,248,0);
+ color: #ff79c6;
+ border-bottom: 3px solid #ff79c6;
+ padding-bottom: 2px;
+ font-weight: 600;
+ font-style: italic;
+ color:ff79c6 ;
+ border-radius : 10px;
+} 
