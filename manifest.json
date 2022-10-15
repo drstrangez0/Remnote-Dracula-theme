@@ -8,15 +8,10 @@
   "version": {
     "major": 0,
     "minor": 0,
-    "patch": 3
+    "patch": 9
   },
   "theme": ["dark"],
-  "description": "Dracula theme for RemNote. Requires dark mode.",
+  "description": "🧛 Dracula theme for RemNote. Requires dark mode.",
   "requestNative": false,
-  "requiredScopes": [
-    {
-      "type": "All",
-      "level": "Read"
-    }
-  ]
+  "requiredScopes": []
 }
