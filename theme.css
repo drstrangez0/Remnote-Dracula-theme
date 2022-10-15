@@ -3,7 +3,7 @@
 :root{
 
     --main-color: #282a36;
-    --scoendary-clolor:#44475a;
+    --secondary-color:#44475a;
     --bold-color:#50fa7b;
     --text-color : white;
     --H-red : #ff5555;
@@ -47,7 +47,7 @@
   background-color: var(--main-color); 
 }
     .rn-clr-background-secondary{
-        background-color: var(--scoendary-clolor); 
+        background-color: var(--secondary-color); 
     }
     .rn-clr-content-secondary{
     color: white!important;
