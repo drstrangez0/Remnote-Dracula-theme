@@ -1,239 +1,248 @@
  
  @import url('https://fonts.googleapis.com/css2 family=Grape+Nuts&family=Shadows+Into+Light&display=swap');
-:root{
+ :root{
+ 
+     --main-color: #282a36;
+     --scoendary-clolor:#44475a;
+     --bold-color:#50fa7b;
+     --text-color : white;
+     --H-red : #ff5555;
+     --H-orange : #ffb86c;
+     --H-yellow : #f1fa8c;
+     --H-blue : #8be9fd;;
+     --H-purble : #ff79c6;
+     --H-green:#50fa7b;
+     
+     
+     }
+     /*
+     Main
+     */
+     
+     .rn-pane__body{
+     background-color: var(--main-color);
+     }
+     .rn-clr-background{
+         background-color: var(--main-color);
+     }
+     .rn-clr-background-accent{
+ 
+         background-color: var(--scoendary-clolor);
+     }
+     .rn-pane__top-bar{
+         background-color: var(--main-color);
+     }
+     .rn-clr-background-elevation-10{
+ 
+         background-color: var(--main-color);
+     }
+     .rn-editor__rem__body__text{
+     color: white!important;
+     }
+     .rn-clr-background-primary{
+     
+         background-color: var(--main-color); 
+     }
+     #document-sidebar {
+   background-color: var(--main-color); 
+ }
+     .rn-clr-background-secondary{
+         background-color: var(--scoendary-clolor); 
+     }
+     .rn-clr-content-secondary{
+     color: white!important;
+     } 
+     .rn-clr-content-tertiary {
+     color: white!important;
+     }
+     .rn-clr-content-on-color{
 
-    --main-color: #282a36;
-    --scoendary-clolor:#44475a;
-    --bold-color:#50fa7b;
-    --text-color : white;
-    --H-red : #ff5555;
-    --H-orange : #ffb86c;
-    --H-yellow : #f1fa8c;
-    --H-blue : #8be9fd;;
-    --H-purble : #ff79c6;
-    --H-green:#50fa7b;
+        color: white!important;
+     }
+     .rn-all-notes{
+     color: white!important;
+        /*
+     Rem hilgiht contrainers * normal
+     */
+     }
+     .rn-editor__rem__body--red{
+         background-color: var(--H-red)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+         font-family: 'Shadows Into Light', cursive;
+     }
+     .rn-editor__rem__body--orange{
+         background-color: var(--H-orange)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+         font-family: 'Shadows Into Light', cursive;
+     }
+     .rn-editor__rem__body--yellow{
+         background-color: var(--H-yellow)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+         font-family: 'Shadows Into Light', cursive;
+     }
+     .rn-editor__rem__body--blue{
+         background-color: var(--H-blue)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+         font-family: 'Shadows Into Light', cursive;
+     }
+     .rn-editor__rem__body--purple{
+         background-color: var(--H-purble)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+         font-family: 'Shadows Into Light', cursive;
+     }
+     .rn-editor__rem__body--green{
+         background-color: var(--H-green)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+         font-family: 'Shadows Into Light', cursive;
+     }
+     .highlight-color--red{
+         background-color: var(--H-red)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+     }
+     .highlight-color--orange{
+         background-color: var(--H-orange)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+     }
+     .highlight-color--yellow{
+         background-color: var(--H-yellow)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+     }
+     .highlight-color--green{
+         background-color: var(--H-green)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+     }
+     .highlight-color--blue{
+         background-color: var(--H-blue)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+     }
+     .highlight-color--purple{
+         background-color: var(--H-purble)!important;
+         border-radius: 35px;
+         border-left-style: solid;
+         border-right-style: solid;
+         border-color: rgba(0, 0, 0,0.0);
+         border-width: 6px;
+         color:black !important;
+     }
+     .rn-rem-reference{
+         color: var(--H-red);
+         text-decoration: underline 2px;
+     }
+     .bold {
+         font-weight: 700;
+         color:var(--bold-color) ;
+              /*
+     Headers & docment title 
+     */
+        }
+        .rn-editor__rem__body__text--h1{
+         font-family: 'Shadows Into Light', cursive!important;
+         
+ 
+        }
+        .rn-editor__rem__body__text--h2{
+         font-family: 'Shadows Into Light', cursive!important;
+ 
+        }
+        .rn-editor__rem__body__text--h3{
+         font-family: 'Shadows Into Light', cursive!important;
+ 
+        }
+        .rn-doc-title{
+         font-family: 'Shadows Into Light', cursive !important;
+ 
+        }
+        .TreeNode {
+     border-color: #ff5555 !important ;
+ }
+ .TreeNode .TreeNode {
+     border-color:#ffb86c !important ;
     
+ }
+ .TreeNode .TreeNode .TreeNode {
+     border-color: #f1fa8c !important ;
     
-    }
-    /*
-    Main
-    */
+ }
+ .TreeNode .TreeNode .TreeNode .TreeNode  {
+     border-color: #50fa7b !important ;
     
-    .rn-pane__body{
-    background-color: var(--main-color);
-    }
-    .rn-clr-background{
-        background-color: var(--main-color);
-    }
-    .rn-clr-background-accent{
-
-        background-color: var(--main-color);
-    }
-    .rn-pane__top-bar{
-        background-color: var(--main-color);
-    }
-    .rn-clr-background-elevation-10{
-
-        background-color: var(--main-color);
-    }
-    .rn-editor__rem__body__text{
-    color: white!important;
-    }
-    .rn-clr-background-primary{
+ }
+ .TreeNode .TreeNode .TreeNode .TreeNode .TreeNode  {
+     border-color: #8be9fd !important ;
     
-        background-color: var(--main-color); 
-    }
-    #document-sidebar {
-  background-color: var(--main-color); 
-}
-    .rn-clr-background-secondary{
-        background-color: var(--scoendary-clolor); 
-    }
-    .rn-clr-content-secondary{
-    color: white!important;
-    } 
-    .rn-clr-content-tertiary {
-    color: white!important;
-    }
-   
-    .rn-all-notes{
-    color: white!important;
-       /*
-    Rem hilgiht contrainers * normal
-    */
-    }
-    .rn-editor__rem__body--red{
-        background-color: var(--H-red)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-        font-family: 'Shadows Into Light', cursive;
-    }
-    .rn-editor__rem__body--orange{
-        background-color: var(--H-orange)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-        font-family: 'Shadows Into Light', cursive;
-    }
-    .rn-editor__rem__body--yellow{
-        background-color: var(--H-yellow)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-        font-family: 'Shadows Into Light', cursive;
-    }
-    .rn-editor__rem__body--blue{
-        background-color: var(--H-blue)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-        font-family: 'Shadows Into Light', cursive;
-    }
-    .rn-editor__rem__body--purple{
-        background-color: var(--H-purble)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-        font-family: 'Shadows Into Light', cursive;
-    }
-    .rn-editor__rem__body--green{
-        background-color: var(--H-green)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-        font-family: 'Shadows Into Light', cursive;
-    }
-    .highlight-color--red{
-        background-color: var(--H-red)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-    }
-    .highlight-color--orange{
-        background-color: var(--H-orange)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-    }
-    .highlight-color--yellow{
-        background-color: var(--H-yellow)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-    }
-    .highlight-color--green{
-        background-color: var(--H-green)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-    }
-    .highlight-color--blue{
-        background-color: var(--H-blue)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-    }
-    .highlight-color--purple{
-        background-color: var(--H-purble)!important;
-        border-radius: 35px;
-        border-left-style: solid;
-        border-right-style: solid;
-        border-color: rgba(0, 0, 0,0.0);
-        border-width: 6px;
-        color:black !important;
-    }
-    .rn-rem-reference{
-        color: var(--H-red);
-        text-decoration: underline 2px;
-    }
-    .bold {
-        font-weight: 700;
-        color:var(--bold-color) ;
-             /*
-    Headers & docment title 
-    */
-       }
-       .rn-editor__rem__body__text--h1{
-        font-family: 'Shadows Into Light', cursive!important;
-        
-
-       }
-       .rn-editor__rem__body__text--h2{
-        font-family: 'Shadows Into Light', cursive!important;
-
-       }
-       .rn-editor__rem__body__text--h3{
-        font-family: 'Shadows Into Light', cursive!important;
-
-       }
-       .rn-doc-title{
-        font-family: 'Shadows Into Light', cursive !important;
-
-       }
-       .TreeNode {
-    border-color: #ff5555 !important ;
-}
-.TreeNode .TreeNode {
-    border-color:#ffb86c !important ;
-   
-}
-.TreeNode .TreeNode .TreeNode {
-    border-color: #f1fa8c !important ;
-   
-}
-.TreeNode .TreeNode .TreeNode .TreeNode  {
-    border-color: #50fa7b !important ;
-   
-}
-.TreeNode .TreeNode .TreeNode .TreeNode .TreeNode  {
-    border-color: #8be9fd !important ;
-   
-}
-.TreeNode .TreeNode .TreeNode .TreeNode .TreeNode .TreeNode   {
-    border-color: #ff79c6 !important ;
-   
-}
-.cloze {
- background-color: rgba(210,225,248,0);
- color: #ff79c6;
- border-bottom: 3px solid #ff79c6;
- padding-bottom: 2px;
- font-weight: 600;
- font-style: italic;
- color:ff79c6 ;
- border-radius : 10px;
-} 
+ }
+ .TreeNode .TreeNode .TreeNode .TreeNode .TreeNode .TreeNode   {
+     border-color: #ff79c6 !important ;
+    
+ }
+ .cloze {
+  background-color: rgba(210,225,248,0);
+  color: #ff79c6;
+  border-bottom: 3px solid #ff79c6;
+  padding-bottom: 2px;
+  font-weight: 600;
+  font-style: italic;
+  color:ff79c6 ;
+  border-radius : 10px;
+ } 
+  /*
+    Image border
+     */
+     .dark .dark\:bg-black {
+        border-radius:20px;
+     }
